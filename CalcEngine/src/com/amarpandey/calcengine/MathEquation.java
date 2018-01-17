@@ -1,3 +1,5 @@
+package com.amarpandey.calcengine;
+
 public class MathEquation {
 	
 	private double leftVal;
@@ -46,7 +48,11 @@ public class MathEquation {
 	public double getResult() {
 		return result;
 	}
-	
+
+	public void setResult(double result) {
+		this.result = result;
+	}
+
 	private void execute() {
 		switch(opCode) {
 			case 'a':
