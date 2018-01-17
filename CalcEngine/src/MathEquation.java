@@ -1,4 +1,3 @@
-
 public class MathEquation {
 	
 	private double leftVal;
@@ -48,7 +47,7 @@ public class MathEquation {
 		return result;
 	}
 	
-	private double execute() {
+	private void execute() {
 		switch(opCode) {
 			case 'a':
 				this.result = this.leftVal + this.rightVal;
@@ -67,9 +66,9 @@ public class MathEquation {
 				break;
 			
 			default:
-				
+				System.out.println("Error - Invalid OpCOde!");
+				this.result = 0.0d;
+				break;
 		}
-		
-		return result;
 	}
 }
