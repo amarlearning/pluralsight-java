@@ -50,8 +50,6 @@ public class CalculateHelper {
 			command = MathCommand.Multiply;
 		} else if(commandString.equalsIgnoreCase(MathCommand.Divide.toString())) {
 			command = MathCommand.Divide;
-		} else {
-			System.out.println("Error - Invalid Command String");
 		}
 		
 	}
