@@ -1,1 +1,1 @@
-# Bashing Java
+### Java sample code dumped!
