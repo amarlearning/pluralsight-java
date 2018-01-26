@@ -2,10 +2,10 @@ package com.amarpandey.calcengine;
 
 public class Subtracter extends CalculateBase {
 
-	public Subtracter(){
-		
+	public Subtracter() {
+
 	}
-	
+
 	public Subtracter(double leftVal, double rightVal) {
 		super(leftVal, rightVal);
 	}
@@ -15,5 +15,5 @@ public class Subtracter extends CalculateBase {
 		double value = getLeftVal() - getRightVal();
 		setResult(value);
 	}
-	
+
 }
