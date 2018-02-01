@@ -8,7 +8,8 @@ public class Main {
 	public static void main(String[] args) {
 
 		String[] statements = {
-					"add 10.0", 
+					"add 10.0",
+					"addx 10.0 aa",
 					"add aa 20.0", 
 					"addx 10.0 20.0",
 					"add 10.0 20.0", 
