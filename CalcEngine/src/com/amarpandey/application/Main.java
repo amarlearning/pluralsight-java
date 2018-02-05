@@ -1,7 +1,11 @@
 package com.amarpandey.application;
 
+import com.amarpandey.calcengine.Adder;
 import com.amarpandey.calcengine.CalculateHelper;
+import com.amarpandey.calcengine.DynamicHelper;
 import com.amarpandey.calcengine.InvalidStatementException;
+import com.amarpandey.calcengine.MathProcessing;
+import com.amarpandey.calcengine.PowerOf;
 
 public class Main {
 
@@ -10,11 +14,17 @@ public class Main {
 		// useCalculateHelper();
 		
 		String[] statements = { 
-				"addx 10.0 20.0" 
+				"add 10.0 21.0",
+				"power 5.0 2.0"
 			};
 		
+		DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
+			new Adder(),
+			new PowerOf()
+		});
+		
 		for (String statement : statements) {
-			
+			System.out.println(helper.process(statement));
 		}
 		
 	}
