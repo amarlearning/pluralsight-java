@@ -9,56 +9,41 @@ import com.amarpandey.calcengine.PowerOf;
 
 public class Main {
 
-	public static void main(String[] args) {
+  public static void main(String[] args) {
 
-		// useCalculateHelper();
-		
-		String[] statements = { 
-				"add 10.0 21.0",
-				"power 5.0 2.0"
-			};
-		
-		DynamicHelper helper = new DynamicHelper(new MathProcessing[] {
-			new Adder(),
-			new PowerOf()
-		});
-		
-		for (String statement : statements) {
-			System.out.println(helper.process(statement));
-		}
-		
-	}
+    // useCalculateHelper();
 
-	public static void useCalculateHelper() {
+    String[] statements = {"add 10.0 21.0", "power 5.0 2.0"};
 
-		String[] statements = { 
-				"add 10.0", 
-				"addx 10.0 aa", 
-				"add aa 20.0",
-				"addx 10.0 20.0", 
-				"add 10.0 20.0", 
-				"divide 100.0 50.0",
-				"subtract 255.0 17.0", 
-				"multiply 10.0 8.0" 
-			};
+    DynamicHelper helper = new DynamicHelper(new MathProcessing[] {new Adder(), new PowerOf()});
 
-		CalculateHelper helper = new CalculateHelper();
+    for (String statement : statements) {
+      System.out.println(helper.process(statement));
+    }
+  }
 
-		for (String statement : statements) {
+  public static void useCalculateHelper() {
 
-			try {
+    String[] statements = {
+      "add 10.0 20.0", "divide 100.0 50.0", "subtract 255.0 17.0", "multiply 10.0 8.0"
+    };
 
-				helper.process(statement);
-				System.out.println(helper);
+    CalculateHelper helper = new CalculateHelper();
 
-			} catch (InvalidStatementException e) {
+    for (String statement : statements) {
 
-				System.out.println(e.getMessage());
+      try {
 
-				if (e.getCause() != null)
-					System.out.println("Orignal Exception : "
-							+ e.getCause().getMessage());
-			}
-		}
-	}
+        helper.process(statement);
+        System.out.println(helper);
+
+      } catch (InvalidStatementException e) {
+
+        System.out.println(e.getMessage());
+
+        if (e.getCause() != null)
+          System.out.println("Orignal Exception : " + e.getCause().getMessage());
+      }
+    }
+  }
 }
